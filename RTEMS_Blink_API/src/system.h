@@ -22,8 +22,7 @@ rtems_task LED_off_task(
 
 extern rtems_id sem_on_id, sem_off_id;
 
-extern rtems_gpio_t port_d;
-extern rtems_gpio_pin_t led5_pin;
+extern rtems_gpio_t led5;
 
 /* configuration information */
 

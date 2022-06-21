@@ -21,7 +21,7 @@ rtems_task LED_on_task(
     while (1) {
         status = rtems_semaphore_obtain(sem_on_id, RTEMS_WAIT, RTEMS_NO_TIMEOUT);
 
-		rtems_gpio_write_pin(&port_d, &led5_pin, RTEMS_GPIO_PIN_SET);
+		rtems_gpio_write_pin(&led5, RTEMS_GPIO_PIN_SET);
 
         status = rtems_task_wake_after(rtems_clock_get_ticks_per_second());
 
@@ -44,7 +44,7 @@ rtems_task LED_off_task(
     while (1) {
         status = rtems_semaphore_obtain(sem_off_id, RTEMS_WAIT, RTEMS_NO_TIMEOUT);
 
-		rtems_gpio_write_pin(&port_d, &led5_pin, RTEMS_GPIO_PIN_RESET);
+		rtems_gpio_write_pin(&led5, RTEMS_GPIO_PIN_RESET);
 
         status = rtems_task_wake_after(rtems_clock_get_ticks_per_second());
 
