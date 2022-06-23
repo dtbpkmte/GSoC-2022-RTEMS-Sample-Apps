@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-rtems_gpio_t led5 = {GPIOD, GPIO_PIN_14};
+rtems_gpio_t led = {};
 
 rtems_status_code rtems_gpio_initialize(void) {
 	/* Enable the GPIO_LED Clock */
@@ -23,11 +23,14 @@ rtems_task Init(
   rtems_task_argument ignored
 )
 {
-	rtems_gpio_config_t led5_config = {};
-	led5_config.speed = GPIO_SPEED_FAST;
-    rtems_gpio_configure(&led5, GPIO_MODE_OUTPUT_PP, GPIO_PULLUP, &led5_config);
+	/* TODO: Set correct GPIO pin and port */
+	led.port = GPIOD;
+	led.pin_mask = GPIO_PIN_12;
 
-    rtems_gpio_write_pin(&led5, RTEMS_GPIO_PIN_SET);
+	rtems_gpio_set_pin_mode(&led, RTEMS_GPIO_PINMODE_OUTPUT_PP);
+	rtems_gpio_set_pull(&led, RTEMS_GPIO_PULLUP);
+
+    rtems_gpio_write_pin(&led, RTEMS_GPIO_PIN_SET);
 
     rtems_name        sem_name, task_name_1, task_name_2;
     rtems_id          tid_1, tid_2;
