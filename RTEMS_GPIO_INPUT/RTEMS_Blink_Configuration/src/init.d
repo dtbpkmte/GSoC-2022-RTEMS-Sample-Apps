@@ -1,4 +1,4 @@
-src/apptask.o: ../src/apptask.c ../src/system.h \
+src/init.o: ../src/init.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/config.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/config.h \
@@ -55,7 +55,6 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/asr.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/support.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/timer.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/stm32f4_gpio.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bspopts.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f407xx.h \
@@ -136,8 +135,8 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_dfsdm.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_lptim.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_mmc.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/stm32f4_gpio.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_ll_gpio.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_ll_exti.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/gpio2.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/default-initial-extension.h \
@@ -145,22 +144,73 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/obsolete.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/bdbuf.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/clock.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/clockdrv.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/sysinit.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/linkersets.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/console.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/console.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/extensions.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/bsp.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/newlib.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/percpu.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/cpuimpl.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/timestamp.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/timespec.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/watchdog.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/thread.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/atomic.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/cpuatomic.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/cpustdatomic.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/freechain.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/objectdata.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/chainimpl.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/schedulernode.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/states.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/threadq.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/userextimpl.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/libcsupport.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/heap.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/inittask.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/percpu.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/threads.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/scheduler.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/scheduler.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/scheduler.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/status.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/schedulerpriority.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/prioritybitmap.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/unlimited.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/tasksdata.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/asrdata.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/eventdata.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/initthread.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/iodrivers.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/libio.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/sys/statvfs.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/fs.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/chain.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/libio.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/imfs.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/libio_.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/seterr.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/userenv.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/pipe.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/thread.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/timecounter.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/sys/timetc.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/machine/_timecounter.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/libpci.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/malloc.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/mpci.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/newlib.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/objectsclassic.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/semdata.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/coremutex.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/coresem.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/mrsp.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/objectsposix.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/percpu.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/scheduler.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/threads.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/wkspace.h
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/wkspacesupport.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/wkspace.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/coremsg.h
 ../src/system.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/config.h:
@@ -218,7 +268,6 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/asr.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/support.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/timer.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/stm32f4_gpio.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bspopts.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f407xx.h:
@@ -299,8 +348,8 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_dfsdm.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_lptim.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_mmc.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/stm32f4_gpio.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_ll_gpio.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_ll_exti.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/gpio2.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/default-initial-extension.h:
@@ -308,19 +357,70 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/obsolete.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/bdbuf.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/clock.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/clockdrv.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/sysinit.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/linkersets.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/console.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/console.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/extensions.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/bsp.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/newlib.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/percpu.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/cpuimpl.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/timestamp.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/timespec.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/watchdog.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/thread.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/atomic.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/cpuatomic.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/cpustdatomic.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/freechain.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/objectdata.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/chainimpl.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/schedulernode.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/states.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/threadq.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/userextimpl.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/libcsupport.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/heap.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/inittask.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/percpu.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/threads.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/scheduler.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/scheduler.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/scheduler.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/status.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/schedulerpriority.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/prioritybitmap.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/unlimited.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/tasksdata.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/asrdata.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/eventdata.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/initthread.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/iodrivers.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/libio.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/sys/statvfs.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/fs.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/chain.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/libio.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/imfs.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/libio_.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/seterr.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/userenv.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/pipe.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/thread.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/timecounter.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/sys/timetc.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/machine/_timecounter.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/libpci.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/malloc.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/mpci.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/newlib.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/objectsclassic.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/semdata.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/coremutex.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/coresem.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/mrsp.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/objectsposix.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/percpu.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/scheduler.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/threads.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/wkspacesupport.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/wkspace.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/coremsg.h:

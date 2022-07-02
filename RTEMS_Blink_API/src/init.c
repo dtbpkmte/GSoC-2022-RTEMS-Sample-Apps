@@ -4,17 +4,8 @@
 
 #define CONFIGURE_INIT
 #include "system.h"
-#include <stdio.h>
-#include <stdint.h>
 
-rtems_gpio_t led = {};
-
-rtems_status_code rtems_gpio_initialize(void) {
-	/* Enable the GPIO_LED Clock */
-    __HAL_RCC_GPIOD_CLK_ENABLE();
-    return RTEMS_SUCCESSFUL;
-}
-
+rtems_gpio *led;
 rtems_id sem_on_id, sem_off_id;
 
 #define ARGUMENT 0
@@ -23,18 +14,23 @@ rtems_task Init(
   rtems_task_argument ignored
 )
 {
-	/* TODO: Set correct GPIO pin and port */
-	led.port = GPIOD;
-	led.pin_mask = GPIO_PIN_12;
+    rtems_status_code volatile status;
 
-	rtems_gpio_set_pin_mode(&led, RTEMS_GPIO_PINMODE_OUTPUT_PP);
-	rtems_gpio_set_pull(&led, RTEMS_GPIO_PULLUP);
+    rtems_gpio_begin();
 
-    rtems_gpio_write_pin(&led, RTEMS_GPIO_PIN_SET);
+	status = rtems_gpio_get(LED_VPIN, &led);
+	if (status != RTEMS_SUCCESSFUL) {
+		Error_Handler();
+	}
+	rtems_gpio_init(led);
+
+	rtems_gpio_set_pin_mode(led, RTEMS_GPIO_PINMODE_OUTPUT_PP);
+	rtems_gpio_set_pull(led, RTEMS_GPIO_NOPULL);
+
+    rtems_gpio_write(led, RTEMS_GPIO_PIN_RESET);
 
     rtems_name        sem_name, task_name_1, task_name_2;
     rtems_id          tid_1, tid_2;
-    rtems_status_code volatile status;
 
     sem_name = rtems_build_name( 'S', 'O', 'N', ' ' );
     status = rtems_semaphore_create( 
@@ -87,4 +83,11 @@ rtems_task Init(
     rtems_task_exit();
 }
 
+void Error_Handler(void) {
+	rtems_interrupt_level level;
+	rtems_interrupt_disable(level);
+	while (1) {
+
+	}
+}
 

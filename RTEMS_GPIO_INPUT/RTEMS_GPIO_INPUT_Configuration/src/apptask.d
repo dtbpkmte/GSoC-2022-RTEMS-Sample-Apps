@@ -55,7 +55,6 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/asr.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/support.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/timer.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/stm32f4_gpio.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bspopts.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f407xx.h \
@@ -136,8 +135,8 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_dfsdm.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_lptim.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_mmc.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/stm32f4_gpio.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_ll_gpio.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_ll_exti.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/gpio2.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/default-initial-extension.h \
@@ -218,7 +217,6 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/asr.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/support.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/timer.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/stm32f4_gpio.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bspopts.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f407xx.h:
@@ -299,8 +297,8 @@ src/apptask.o: ../src/apptask.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_dfsdm.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_lptim.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_hal_mmc.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/stm32f4_gpio.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_ll_gpio.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/stm32f4xx_ll_exti.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/gpio2.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/default-initial-extension.h:
