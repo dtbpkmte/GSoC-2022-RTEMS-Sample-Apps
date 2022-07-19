@@ -24,9 +24,6 @@ rtems_task Init(
 
 void Error_Handler(void);
 
-extern rtems_gpio *led[4], *pot;
-extern volatile rtems_gpio_pin_state led_state[4];
-
 /* configuration information */
 
 #include <bsp.h> /* for device driver prototypes */
