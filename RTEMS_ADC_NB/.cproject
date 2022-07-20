@@ -19,11 +19,13 @@
 						<toolChain id="org.rtems.cdt.config.toolchain.2035693831" name="RTEMS Toolchain" superClass="org.rtems.cdt.config.toolchain">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="org.rtems.cdt.target.321217795" name="RTEMS Target" osList="all" superClass="org.rtems.cdt.target"/>
 							<builder buildPath="${workspace_loc:/RTEMS_ADC_NB}/RTEMS Executable Configuration" id="org.rtems.cdt.builder.1450552473" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="org.rtems.cdt.builder"/>
-							<tool id="org.rtems.cdt.compiler.c.1042754456" name="RTEMS C Compiler" superClass="org.rtems.cdt.compiler.c">
+							<tool command="/home/duk3/gsoc2022/rtems/6/bin/arm-rtems6-gcc" id="org.rtems.cdt.compiler.c.1042754456" name="RTEMS C Compiler" superClass="org.rtems.cdt.compiler.c">
+								<option id="org.rtems.cdt.tool.gcc.option.olevel.2019240765" name="Optimization level:" superClass="org.rtems.cdt.tool.gcc.option.olevel" useByScannerDiscovery="false" value="org.rtems.cdt.tool.gcc.option.o0" valueType="enumerated"/>
+								<option id="org.rtems.cdt.tool.gcc.option.glevel.997405661" superClass="org.rtems.cdt.tool.gcc.option.glevel" useByScannerDiscovery="false" value="org.rtems.cdt.tool.gcc.option.g3" valueType="enumerated"/>
 								<inputType id="org.rtems.cdt.compiler.input.c.2104285345" superClass="org.rtems.cdt.compiler.input.c"/>
 							</tool>
 							<tool id="org.rtems.cdt.compiler.cpp.1494255525" name="RTEMS C++ Compiler" superClass="org.rtems.cdt.compiler.cpp"/>
-							<tool id="org.rtems.cdt.linker.c.260546449" name="RTEMS Linker" superClass="org.rtems.cdt.linker.c">
+							<tool command="/home/duk3/gsoc2022/rtems/6/bin/arm-rtems6-gcc" id="org.rtems.cdt.linker.c.260546449" name="RTEMS Linker" superClass="org.rtems.cdt.linker.c">
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.362405551" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -51,6 +53,10 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="RTEMS Executable Configuration">
+			<resource resourceType="PROJECT" workspacePath="/RTEMS_ADC_NB"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

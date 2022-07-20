@@ -17,7 +17,7 @@ OBJS += \
 src/%.o: ../src/%.c src/subdir.mk
 	@echo 'Building file: $<'
 	@echo 'Invoking: RTEMS C Compiler'
-	/home/duk3/gsoc2022/rtems/6/bin/arm-rtems6-gcc -fdata-sections -ffunction-sections -I/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=auto -O0 -g3 -Wall -c -fmessage-length=0 -pipe -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	/home/duk3/gsoc2022/rtems/6/bin/arm-rtems6-gcc -fdata-sections -ffunction-sections -I/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=auto -Os -g -Wall -c -fmessage-length=0 -pipe -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

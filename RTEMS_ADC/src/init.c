@@ -38,11 +38,10 @@ rtems_task Init(
 //	rtems_adc_set_resolution(pot, ADC_RESOLUTION);
 
 	uint32_t pot_value = 0;
-	volatile uint32_t led_index = 0;
 
     while (1) {
     	rtems_adc_read_raw(pot, &pot_value);
-    	led_index = pot_value / (MAX_ADC_VALUE / 4);
+    	uint32_t led_index = pot_value / (MAX_ADC_VALUE / 4);
     	for (i = 0; i < 4; ++i) {
     		rtems_gpio_write(led[i], RTEMS_GPIO_PIN_RESET);
     	}

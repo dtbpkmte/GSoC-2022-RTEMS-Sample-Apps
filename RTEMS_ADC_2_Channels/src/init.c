@@ -26,7 +26,8 @@ rtems_task Init(
 	rtems_gpio_set_pin_mode(analog2, RTEMS_GPIO_PINMODE_ANALOG);
 	rtems_gpio_set_pull(analog2, RTEMS_GPIO_NOPULL);
 
-//	rtems_adc_set_resolution(analog1, ADC_RESOLUTION);
+	rtems_adc_set_resolution(analog1, 10);
+	rtems_adc_set_resolution(analog2, 12);
 
 	uint32_t a1_value = 0, a2_value = 0;
 

@@ -4,6 +4,7 @@
 
 #define CONFIGURE_INIT
 #include "system.h"
+#include <bsp/stm32f4_adc.h>
 
 uint32_t LEDx_VPIN[4] = {
 		LED1_VPIN,
@@ -38,15 +39,13 @@ rtems_task Init(
 //	rtems_adc_set_resolution(pot, ADC_RESOLUTION);
 
 	uint32_t pot_value = 0;
-	volatile uint32_t led_index = 0;
-	rtems_adc_status adc_status;
 
     while (1) {
-		adc_status = rtems_adc_read_raw_nb(pot, &pot_value);
+		rtems_adc_status adc_status = rtems_adc_read_raw_nb(pot, &pot_value);
     	if (adc_status == RTEMS_ADC_NOT_STARTED) {
     		rtems_adc_start_read_nb(pot);
     	} else if (adc_status == RTEMS_ADC_READY){
-			led_index = pot_value / (MAX_ADC_VALUE / 4);
+			uint32_t led_index = pot_value / (MAX_ADC_VALUE / 4);
 			for (i = 0; i < 4; ++i) {
 				rtems_gpio_write(led[i], RTEMS_GPIO_PIN_RESET);
 			}
