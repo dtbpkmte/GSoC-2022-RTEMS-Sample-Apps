@@ -16,14 +16,10 @@ rtems_task Init(
 {
     rtems_status_code volatile status;
 
-    rtems_gpio_begin();
-
 	status = rtems_gpio_get(LED_VPIN, &led);
 	if (status != RTEMS_SUCCESSFUL) {
 		Error_Handler();
 	}
-	rtems_gpio_init(led);
-
 	rtems_gpio_set_pin_mode(led, RTEMS_GPIO_PINMODE_OUTPUT_PP);
 	rtems_gpio_set_pull(led, RTEMS_GPIO_NOPULL);
 

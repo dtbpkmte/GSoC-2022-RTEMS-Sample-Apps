@@ -23,6 +23,10 @@ rtems_task Init(
 	rtems_task_argument argument
 );
 
+void adc_isr(
+	void *arg
+);
+
 void Error_Handler(void);
 
 /* configuration information */

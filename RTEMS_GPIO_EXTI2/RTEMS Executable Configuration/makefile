@@ -49,7 +49,7 @@ main-build: RTEMS_GPIO_EXTI2.exe
 RTEMS_GPIO_EXTI2.exe: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: RTEMS Linker'
-	/home/duk3/gsoc2022/rtems/6/bin/arm-rtems6-gcc -I/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=auto -B/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib -qrtems -Wl,--gc-sections -o "RTEMS_GPIO_EXTI2.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	/home/duk3/gsoc2022/rtems/6/bin/arm-rtems6-gcc -fdata-sections -ffunction-sections -I/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=auto -B/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib -qrtems -Wl,--gc-sections -o "RTEMS_GPIO_EXTI2.exe" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

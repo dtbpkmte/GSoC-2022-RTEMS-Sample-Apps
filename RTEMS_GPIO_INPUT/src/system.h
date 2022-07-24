@@ -3,8 +3,7 @@
 
 #include <rtems.h>
 #include <stdint.h>
-#include <stm32f4xx.h>
-#include <bsp/stm32f4_gpio.h>
+#include <bsp/gpio2.h>
 
 /***** TODO: configure this!! ********/
 #define LED_VPIN 		((uint32_t) (16*3 + 12)) // STM32F4 PD12
@@ -16,8 +15,6 @@
 rtems_task Init(
   rtems_task_argument argument
 );
-
-extern rtems_gpio *led, *button;
 
 /* configuration information */
 

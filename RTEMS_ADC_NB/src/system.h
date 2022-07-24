@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <bsp/gpio2.h>
 #include <bsp/adc.h>
+#include <bsp/periph_api.h>
 
 /***** TODO: configure this!! ********/
 #define LED1_VPIN 		((uint32_t) (16*3 + 12)) 	// STM32F4 PD12
@@ -28,7 +29,7 @@ void Error_Handler(void);
 
 #include <bsp.h> /* for device driver prototypes */
 
-#define CONFIGURE_APPLICATION_NEEDS_SIMPLE_CONSOLE_DRIVER
+#define CONFIGURE_APPLICATION_NEEDS_CONSOLE_DRIVER
 #define CONFIGURE_APPLICATION_NEEDS_CLOCK_DRIVER
 
 #define CONFIGURE_MAXIMUM_TASKS                 1

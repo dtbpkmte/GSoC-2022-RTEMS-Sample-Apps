@@ -31,18 +31,14 @@ rtems_task Init(
 {
 	rtems_status_code status;
 
-    rtems_gpio_begin();
-
     rtems_gpio_pull pull = RTEMS_GPIO_NOPULL; // not necessary if not using
     										  // F4 discovery
     for (i = 0; i < 4; ++i) {
 		rtems_gpio_get(LEDx_VPIN[i], &led[i]);
-		rtems_gpio_init(led[i]);
 		rtems_gpio_set_pin_mode(led[i], RTEMS_GPIO_PINMODE_OUTPUT_PP);
 		rtems_gpio_set_pull(led[i], RTEMS_GPIO_NOPULL);
 
 		rtems_gpio_get(BUTTONx_VPIN[i], &button[i]);
-		rtems_gpio_init(button[i]);
 		rtems_gpio_configure_interrupt(
 				button[i],
 				button_isr,

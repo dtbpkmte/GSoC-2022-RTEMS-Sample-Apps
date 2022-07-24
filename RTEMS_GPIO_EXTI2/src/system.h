@@ -3,7 +3,7 @@
 
 #include <rtems.h>
 #include <stdint.h>
-#include <bsp/stm32f4_gpio.h>
+#include <bsp/gpio2.h>
 
 /***** TODO: configure this!! ********/
 #define LED1_VPIN 		((uint32_t) (16*3 + 12)) // STM32F4 PD12
@@ -26,9 +26,6 @@ void Error_Handler(void);
 void button_isr(
 	void *arg
 );
-
-extern rtems_gpio *led[4], *button[4];
-extern volatile rtems_gpio_pin_state led_state[4];
 
 /* configuration information */
 

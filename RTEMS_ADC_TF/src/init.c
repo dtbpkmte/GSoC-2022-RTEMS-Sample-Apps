@@ -4,6 +4,7 @@
 
 #define CONFIGURE_INIT
 #include "system.h"
+#include <stdio.h>
 
 rtems_gpio *pot;
 int i;
@@ -21,9 +22,9 @@ rtems_task Init(
 	rtems_status_code status;
 
 	rtems_gpio_get(POT_VPIN, &pot);
-	rtems_gpio_init(pot);
 	rtems_gpio_set_pin_mode(pot, RTEMS_GPIO_PINMODE_ANALOG);
 	rtems_gpio_set_pull(pot, RTEMS_GPIO_NOPULL);
+	rtems_periph_api_set_api(pot, RTEMS_PERIPH_API_TYPE_ADC);
 
 	rtems_adc_assign_tf(pot, to_voltage, NULL);
 
@@ -33,6 +34,7 @@ rtems_task Init(
 
     while (1) {
     	rtems_adc_read(pot, &pot_voltage);
+    	printf("Voltage: %lf\n", pot_voltage);
     }
 }
 

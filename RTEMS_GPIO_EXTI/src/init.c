@@ -16,16 +16,12 @@ rtems_task Init(
 {
 	rtems_status_code status;
 
-    rtems_gpio_begin();
-
 	rtems_gpio_get(LED_VPIN, &led);
     rtems_gpio_get(BUTTON_VPIN, &button);
 
-	rtems_gpio_init(led);
 	rtems_gpio_set_pin_mode(led, RTEMS_GPIO_PINMODE_OUTPUT_PP);
 	rtems_gpio_set_pull(led, RTEMS_GPIO_NOPULL);
 
-	rtems_gpio_init(button);
 	rtems_gpio_configure_interrupt(
 			button,
 			button_isr,

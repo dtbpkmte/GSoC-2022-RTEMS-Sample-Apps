@@ -59,6 +59,7 @@ src/init.o: ../src/init.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bspopts.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/default-initial-extension.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/periph_api.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/adc.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/obsolete.h \
@@ -68,7 +69,6 @@ src/init.o: ../src/init.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/sysinit.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/linkersets.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/console.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/console.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/extensions.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/bsp.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/newlib.h \
@@ -105,6 +105,8 @@ src/init.o: ../src/init.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/eventdata.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/initthread.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/iodrivers.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/ioimpl.h \
+ /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/console.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/libio.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/sys/statvfs.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/fs.h \
@@ -192,6 +194,7 @@ src/init.o: ../src/init.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bspopts.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/default-initial-extension.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/periph_api.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/adc.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/obsolete.h:
@@ -201,7 +204,6 @@ src/init.o: ../src/init.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/sysinit.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/linkersets.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/console.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/console.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/extensions.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/bsp.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/newlib.h:
@@ -238,6 +240,8 @@ src/init.o: ../src/init.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/rtems/eventdata.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/initthread.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/iodrivers.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/ioimpl.h:
+/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/console.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/libio.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/sys/statvfs.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/fs.h:

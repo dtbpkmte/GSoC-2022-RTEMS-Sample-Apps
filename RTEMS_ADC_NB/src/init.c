@@ -4,7 +4,6 @@
 
 #define CONFIGURE_INIT
 #include "system.h"
-#include <bsp/stm32f4_adc.h>
 
 uint32_t LEDx_VPIN[4] = {
 		LED1_VPIN,
@@ -27,14 +26,13 @@ rtems_task Init(
 
     for (i = 0; i < 4; ++i) {
 		rtems_gpio_get(LEDx_VPIN[i], &led[i]);
-		rtems_gpio_init(led[i]);
 		rtems_gpio_set_pin_mode(led[i], RTEMS_GPIO_PINMODE_OUTPUT_PP);
 		rtems_gpio_set_pull(led[i], RTEMS_GPIO_NOPULL);
     }
 	rtems_gpio_get(POT_VPIN, &pot);
-	rtems_gpio_init(pot);
 	rtems_gpio_set_pin_mode(pot, RTEMS_GPIO_PINMODE_ANALOG);
 	rtems_gpio_set_pull(pot, RTEMS_GPIO_NOPULL);
+	rtems_periph_api_set_api(pot, RTEMS_PERIPH_API_TYPE_ADC);
 
 //	rtems_adc_set_resolution(pot, ADC_RESOLUTION);
 
