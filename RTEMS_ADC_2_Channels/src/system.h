@@ -5,11 +5,16 @@
 #include <stdint.h>
 #include <bsp/gpio2.h>
 #include <bsp/adc.h>
-#include <bsp/periph_api.h>
 
 /***** TODO: configure this!! ********/
 #define ANALOG1_VPIN	((uint32_t) (16*1 + 0))  	// STM32F4 PB0
 #define ANALOG2_VPIN	((uint32_t) (16*1 + 1))  	// STM32F4 PB1
+
+// STM32F4 pin B0 (ADC1, channel 8), pin B1 (ADC1, channel 9)
+#define ANALOG1_ADC_ID		0
+#define ANALOG2_ADC_ID		0
+#define ANALOG1_CHANNEL		8
+#define ANALOG2_CHANNEL		9
 
 #define ADC_RESOLUTION	10							// 10-bit
 #define MAX_ADC_VALUE	(0x1U << ADC_RESOLUTION)

@@ -13,7 +13,8 @@ uint32_t LEDx_VPIN[4] = {
 		LED4_VPIN
 };
 
-rtems_gpio *led[4], *pot;
+rtems_gpio *led[4], *pot_gpio;
+rtems_adc *pot;
 volatile rtems_gpio_pin_state led_state[4];
 int i;
 
@@ -30,12 +31,15 @@ rtems_task Init(
 		rtems_gpio_set_pin_mode(led[i], RTEMS_GPIO_PINMODE_OUTPUT_PP);
 		rtems_gpio_set_pull(led[i], RTEMS_GPIO_NOPULL);
     }
-	rtems_gpio_get(POT_VPIN, &pot);
-	rtems_gpio_set_pin_mode(pot, RTEMS_GPIO_PINMODE_ANALOG);
-	rtems_gpio_set_pull(pot, RTEMS_GPIO_NOPULL);
-	rtems_periph_api_set_api(pot, RTEMS_PERIPH_API_TYPE_ADC);
+	rtems_gpio_get(POT_VPIN, &pot_gpio);
+	rtems_gpio_set_pin_mode(pot_gpio, RTEMS_GPIO_PINMODE_ANALOG);
+	rtems_gpio_set_pull(pot_gpio, RTEMS_GPIO_NOPULL);
 
-//	rtems_adc_set_resolution(pot, ADC_RESOLUTION);
+	rtems_adc_get(ADC_ID, &pot);
+	rtems_adc_set_channel(pot, ADC_CHANNEL);
+	rtems_adc_set_alignment(pot, RTEMS_ADC_ALIGN_RIGHT);
+	rtems_adc_set_resolution(pot, ADC_RESOLUTION);
+	rtems_adc_init(pot);
 
 	uint32_t pot_value = 0;
 
@@ -53,6 +57,7 @@ rtems_task Init(
 void Error_Handler(void) {
 	rtems_interrupt_level level;
 	rtems_interrupt_disable(level);
+	printf("Error_Handler()\n");
 	while (1) {
 
 	}

@@ -59,7 +59,6 @@ src/init.o: ../src/init.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bspopts.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/default-initial-extension.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/periph_api.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/adc.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/obsolete.h \
@@ -118,9 +117,6 @@ src/init.o: ../src/init.c ../src/system.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/userenv.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/pipe.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/thread.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/timecounter.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/sys/timetc.h \
- /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/machine/_timecounter.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/libpci.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/malloc.h \
  /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/mpci.h \
@@ -194,7 +190,6 @@ src/init.o: ../src/init.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bspopts.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/default-initial-extension.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/periph_api.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/bsp/adc.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/obsolete.h:
@@ -253,9 +248,6 @@ src/init.o: ../src/init.c ../src/system.h \
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/userenv.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/pipe.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/thread.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/score/timecounter.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/sys/timetc.h:
-/home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/machine/_timecounter.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/libpci.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/malloc.h:
 /home/duk3/gsoc2022/rtems/6/arm-rtems6/stm32f4/lib/include/rtems/confdefs/mpci.h:
